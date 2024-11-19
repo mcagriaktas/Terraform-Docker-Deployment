@@ -1,0 +1,49 @@
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Terraform variable files
+*.tfvars
+*.tfvars.json
+*.override.tf
+*.override.tf.json
+
+# Logs and crash reports
+crash.log
+*.log
+
+# Local backend lock files
+*.tfstate.lock.info
+
+# Sensitive files (e.g., credentials, private keys)
+*.pem
+*.key
+*.env
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+.env
+
+# Docker Volume
+/postgres/postgres_data/
+dockers/postgres/postgres_data
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+
+# Other
+node_modules/
+dist/
+target/
