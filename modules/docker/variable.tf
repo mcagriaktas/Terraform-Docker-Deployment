@@ -46,6 +46,11 @@ variable "python_ipv4" {
 ################# ====================== #####################
 # Postgres 
 ################# ====================== #####################
+variable "postgres_container_name" {
+  description = "postgres container name"
+  type = string
+}
+
 variable "postgres_user" {
   description = "PostgreSQL username"
   type        = string
@@ -69,6 +74,11 @@ variable "postgres_version" {
 ################# ====================== #####################
 # pgAdmin
 ################# ====================== #####################
+variable "pgAdmin_container_name" {
+  description = "pgAdmin container name"
+  type = string
+}
+
 variable "pgAdmin_version" {
   description = "pgAdmin Version"
   type = string
@@ -92,6 +102,11 @@ variable "pgAdmin_password" {
 ################# ====================== #####################
 # Python  
 ################# ====================== #####################
+variable "python_container_name" {
+  description = "Python container name"
+  type = string
+}
+
 variable "python_version" {
     description = "Python version"
     type = string

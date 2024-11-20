@@ -42,6 +42,11 @@ output "pgAdmin_password" {
   value = var.deploy_pgAdmin ? "pgAdmin root password: ${var.pgAdmin_password}" : null
 }
 
+output "pgAdmin_access_url" {
+  description = "pgAdmin access url"
+  value = var.deploy_pgAdmin ? "pgAdmin access url: http://localhost:${var.pgAdmin_port}" : null
+}
+
 ################## ========================= ##################
 # Python Output
 ################## ========================= ##################
@@ -53,4 +58,9 @@ output "python_ipv4" {
 output "python_version" {
   description = "Python version"
   value = var.deploy_python ? var.python_version : null
+}
+
+output "python_container_name" {
+  description = "Python container name for test script"
+  value = var.deploy_python ? var.python_container_name : null
 }

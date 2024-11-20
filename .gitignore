@@ -91,6 +91,6 @@ Thumbs.db
 *.test
 
 # Go mod files
-/go.sum
-/go.mod
+**/go.sum
+**/go.mod
 

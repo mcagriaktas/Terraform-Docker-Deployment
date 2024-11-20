@@ -11,26 +11,29 @@ remote_state {
 
 inputs = {
   # Docker Local Network
-  network              = "dahbest"
+  network                 = "dahbest"
   
   # Postgres
-  deploy_postgres      = true
-  postgres_version     = "17"
-  postgres_user        = "cagri"
-  postgres_password    = "35413541"
-  postgres_db          = "mydb"
-  postgres_ipv4        = "172.80.0.20"
+  deploy_postgres         = true
+  postgres_container_name = "postgres"
+  postgres_version        = "17"
+  postgres_user           = "cagri"
+  postgres_password       = "35413541"
+  postgres_db             = "mydb"
+  postgres_ipv4           = "172.80.0.20"
 
   # pgAdmin
-  deploy_pgAdmin       = true
-  pgAdmin_version      = "8.13.0"
-  pgAdmin_email        = "mucagriaktas@gmail.com"
-  pgAdmin_password     = "35413541"
-  pgAdmin_port         = "8080"
-  pgAdmin_ipv4         = "172.80.0.21"
+  deploy_pgAdmin          = true
+  pgAdmin_container_name  = "pgAdmin"
+  pgAdmin_version         = "8.13.0"
+  pgAdmin_email           = "mucagriaktas@gmail.com"
+  pgAdmin_password        = "35413541"
+  pgAdmin_port            = "8080"
+  pgAdmin_ipv4            = "172.80.0.21"
 
   # Python
-  deploy_python        = true
-  python_version       = "3.13"
-  python_ipv4          = "172.80.0.110"
+  deploy_python           = true
+  python_container_name   = "python"
+  python_version          = "3.13"
+  python_ipv4             = "172.80.0.110"
 }

@@ -13,7 +13,7 @@ resource "docker_container" "postgres" {
   count = var.deploy_postgres ? 1 : 0
 
   image = docker_image.postgres[0].image_id
-  name  = "postgres"
+  name  = var.postgres_container_name
 
   cpu_set = "4"
   memory = 4096
@@ -52,7 +52,7 @@ resource "docker_container" "pgAdmin" {
   count = var.deploy_pgAdmin ? 1 : 0
 
   image = docker_image.pgAdmin[0].image_id
-  name  = "pgAdmin"
+  name  = var.pgAdmin_container_name
 
   cpu_set = "4"
   memory = 4096
@@ -88,7 +88,7 @@ resource "docker_container" "python" {
   count = var.deploy_python ? 1 : 0
 
   image = docker_image.python[0].image_id
-  name  = "python"
+  name  = var.python_container_name
 
   cpu_set = "4"
   memory  = 4096
@@ -104,8 +104,13 @@ resource "docker_container" "python" {
   }
 
   volumes {
-    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/python/config"
-    container_path = "/mnt/config"
+    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/python/config/starter-python.sh"
+    container_path = "/mnt/config/starter-python.sh"
+  }
+
+  volumes {
+    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/python/config/test.txt"
+    container_path = "/mnt/config/test.txt"
   }
 
   entrypoint = ["/bin/bash", "-c", "chmod +x /mnt/config/starter-python.sh && /mnt/config/starter-python.sh"]

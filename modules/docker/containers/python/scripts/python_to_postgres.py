@@ -3,7 +3,7 @@ import pandas as pd
 
 
 class Postgres:
-    def __init__(self, user="cagri", password="3541", host="postgres", port="5432", database="mydb", schema="mysc"):
+    def __init__(self, user="dev_user", password="dev_pass", host="postgres", port="5432", database="dev_db", schema="mysc"):
         self.user = user
         self.password = password
         self.host = host
