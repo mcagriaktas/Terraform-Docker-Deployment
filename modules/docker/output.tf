@@ -52,5 +52,5 @@ output "python_ipv4" {
 
 output "python_version" {
   description = "Python version"
-  value = var.deploy_python ? "Python version is: ${var.python_version}" : null
+  value = var.deploy_python ? var.python_version : null
 }
