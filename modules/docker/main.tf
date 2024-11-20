@@ -10,7 +10,7 @@ resource "docker_image" "postgres" {
 
 # Postgres Container
 resource "docker_container" "postgres" {
-  count = var.deploy_pgAdmin ? 1 : 0
+  count = var.deploy_postgres ? 1 : 0
 
   image = docker_image.postgres[0].image_id
   name  = "postgres"
@@ -35,7 +35,7 @@ resource "docker_container" "postgres" {
   ]
 
   volumes {
-    host_path      = "/home/cagri/project/terraform_projects/aws_docker_local/dockers/postgres/postgres_data"
+    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/postgres/postgres_data"
     container_path = "/var/lib/postgresql/data"
   }
 
@@ -48,7 +48,7 @@ resource "docker_container" "postgres" {
 # pgAdmin Image
 resource "docker_image" "pgAdmin" {
   count        = var.deploy_pgAdmin ? 1 : 0
-  name = "dpage/pgadmin4:${var.pgAdmin_version}"
+  name         = "dpage/pgadmin4:${var.pgAdmin_version}"
   keep_locally = false
 }
 
@@ -104,17 +104,15 @@ resource "docker_container" "python" {
   }
 
   volumes {
-    host_path      = "/home/cagri/project/terraform_projects/terraform_docker/dockers/python/scripts"
+    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/python/scripts"
     container_path = "/mnt/scripts"
   }
 
   volumes {
-    host_path      = "/home/cagri/project/terraform_projects/terraform_docker/dockers/python/config"
+    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/python/config"
     container_path = "/mnt/config"
   }
 
   entrypoint = ["/bin/bash", "-c", "chmod +x /mnt/config/starter-python.sh && /mnt/config/starter-python.sh"]
   working_dir = "/mnt"
-  
-  depends_on = [docker_container.postgres]
 }

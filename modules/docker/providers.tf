@@ -2,12 +2,12 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "~> 3.0.1"
+      version = "~> 3.0.2"
     }
   }
-  backend "local" {
-    path = "terraform_config/terraform.tfstate"
-  }
+
+  backend "local" {}
+
 }
 
 provider "docker" {}
