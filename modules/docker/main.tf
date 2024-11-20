@@ -68,8 +68,8 @@ resource "docker_container" "pgAdmin" {
   ]
 
   ports {
-    internal = 80
-    external = 80
+    internal = "80"
+    external = var.pgAdmin_port
   }
 }
 

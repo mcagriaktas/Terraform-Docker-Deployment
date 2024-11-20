@@ -27,6 +27,11 @@ output "pgAdmin_ipv4" {
   value = var.deploy_pgAdmin ? "pgAdmin IP Address: ${var.pgAdmin_ipv4}" : null
 }
 
+output "pgAdmin_port" {
+  description = "pgAdmin port"
+  value = var.deploy_pgAdmin ? var.pgAdmin_port : null
+}
+
 output "pgAdmin_email" {
   description = "pgAdmin root email."
   value = var.deploy_pgAdmin ? "pgAdmin root email: ${var.pgAdmin_email}" : null

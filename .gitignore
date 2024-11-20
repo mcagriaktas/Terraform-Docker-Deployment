@@ -50,3 +50,47 @@ Thumbs.db
 node_modules/
 dist/
 target/
+
+# Go binary output
+/bin/
+/obj/
+/*.exe
+/*.exe~
+/*.test
+/*.out
+
+# Go workspace file (optional)
+go.work
+
+# Dependency directories
+/vendor/
+
+# IDE files
+.idea/
+/.vscode/
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Linux files
+*.swp
+
+# Test coverage files
+*.coverage
+
+# Go modules cache
+.golangci-lint-cache/
+
+# Build artifacts
+*.out
+
+# Go test binary
+*.test
+
+# Go mod files
+/go.sum
+/go.mod
+

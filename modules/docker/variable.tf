@@ -74,6 +74,11 @@ variable "pgAdmin_version" {
   type = string
 }
 
+variable "pgAdmin_port" {
+  description = "pgAdmin port"
+  type = string
+}
+
 variable "pgAdmin_email" {
   description = "pgAdmin root email address"
   type = string

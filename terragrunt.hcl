@@ -26,6 +26,7 @@ inputs = {
   pgAdmin_version      = "8.13.0"
   pgAdmin_email        = "mucagriaktas@gmail.com"
   pgAdmin_password     = "35413541"
+  pgAdmin_port         = "8080"
   pgAdmin_ipv4         = "172.80.0.21"
 
   # Python

@@ -5,7 +5,7 @@ include {
 inputs = {
   # Deployment flags
   deploy_postgres = true
-  deploy_pgAdmin  = false
+  deploy_pgAdmin  = true
   deploy_python   = true
 
   # Network configuration
