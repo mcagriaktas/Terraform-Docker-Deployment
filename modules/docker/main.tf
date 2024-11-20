@@ -34,11 +34,6 @@ resource "docker_container" "postgres" {
     "POSTGRES_DB=${var.postgres_db}"
   ]
 
-  volumes {
-    host_path      = "/home/cagri/project/terraform_projects/Terraform-Docker-Deployment/modules/docker/containers/postgres/postgres_data"
-    container_path = "/var/lib/postgresql/data"
-  }
-
   must_run = true
 }
 

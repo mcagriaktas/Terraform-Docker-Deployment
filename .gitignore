@@ -1,3 +1,6 @@
+# Terragrunt
+.terragrunt-cache/
+
 # Terraform files
 *.tfstate
 *.tfstate.backup
