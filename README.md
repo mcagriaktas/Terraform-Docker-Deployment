@@ -1,5 +1,14 @@
 # Container Deployment Guide with Terraform - Terragrunt - Terratest
 
+## Tools / Softwares Versions
+
+| Tool       | Version | Description |
+|------------|---------|-------------|
+| Go         | 1.23.3  | Required for running Terratest and tests |
+| Terraform  | 1.9.6   | Infrastructure as Code tool |
+| Terragrunt | 0.69.0  | Terraform wrapper for configuration management |
+| Terratest  | 0.47.2  | Infrastructure testing framework |
+
 ## Prerequisites
 - Terragrunt installed
 - Git
