@@ -1,13 +1,34 @@
 # Container Deployment Guide with Terraform - Terragrunt - Terratest
+## Tools / Softwares Versions
+
+| Tool       | Version | Description |
+|------------|---------|-------------|
+| Go         | 1.23.3  | Required for running Terratest and tests |
+| Terraform  | 1.9.6   | Infrastructure as Code tool |
+| Terragrunt | 0.69.0  | Terraform wrapper for configuration management |
+| Terratest  | 0.47.2  | Infrastructure testing framework |
+| Docker  | 27.2.0  | Containerization platform |
+| Kubernetes  | v1.30.2  | Container orchestration platform |
 
 ## Prerequisites
 - Terragrunt installed
+- Terraform
 - Git
 - Docker
+- Kubernetes
 - Go (for running tests)
 
-## Important Container Configuration Notes
+## How to Run
+1. Initialize your project by running:
+```bash
+cd Kubernetes/modules/kubernetes
+terraform init
+```
 
+2. You can set default variables in the `root terragrunt.hcl` file.
+3. To set different variables for `different environments`, use the `servers folder`.
+
+## Important Container Configuration Notes
 ### Volume Management
 1. **Python Container**: After cloning the repository, update the Python volume path in your configuration to match your local environment.
 
